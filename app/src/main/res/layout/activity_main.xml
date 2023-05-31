@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontalMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/glHorizontalTopMenuCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/top_menu_center" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/top_menu_background_color"
+        app:layout_constraintBottom_toTopOf="@id/glHorizontalMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/top_menu_back_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back_arrow"
+        android:layout_margin="@dimen/top_menu_margin"
+        android:layout_marginStart="@dimen/top_menu_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@id/glHorizontalTopMenuCenter"
+        app:layout_constraintBottom_toBottomOf="@id/glHorizontalTopMenuCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/top_menu_tittle"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/top_menu_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/top_menu_text_contacts"
+        android:textColor="@color/main_text_color"
+        android:textSize="@dimen/top_menu_tittle_font_size"
+        app:fontFamily="@font/open_sans"
+        app:layout_constraintTop_toTopOf="@id/glHorizontalTopMenuCenter"
+        app:layout_constraintBottom_toBottomOf="@id/glHorizontalTopMenuCenter"
+        app:layout_constraintStart_toEndOf="@id/top_menu_back_arrow"
+        app:layout_constraintEnd_toStartOf="@id/top_men_find"
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/top_men_find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_search"
+        android:layout_margin="@dimen/top_menu_margin"
+        android:layout_marginStart="@dimen/top_menu_horizontal_margin"
+        app:layout_constraintTop_toTopOf="@id/glHorizontalTopMenuCenter"
+        app:layout_constraintBottom_toBottomOf="@id/glHorizontalTopMenuCenter"
+        app:layout_constraintStart_toEndOf="@id/top_menu_tittle"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/top_menu_add_contacts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_add_contacts"
+        android:textColor="@color/main_text_color"
+        android:textSize="@dimen/top_menu_button_font_size"
+        app:fontFamily="@font/open_sans"
+        android:layout_marginStart="@dimen/normal_margin"
+        app:layout_constraintTop_toBottomOf="@id/top_menu_tittle"
+        app:layout_constraintBottom_toBottomOf="@id/glHorizontalMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/item_contact"
+        android:scrollbars="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/glHorizontalMenu"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

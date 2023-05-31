@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="find_contact">Find contact</string>
+    <string name="top_menu_text_contacts">Contacts</string>
+    <string name="text_add_contacts">Add contacts</string>
+    <string name="card_text_career">Career</string>
+    <string name="card_text_name">Name</string>
+</resources>
